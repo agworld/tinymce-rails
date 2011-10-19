@@ -1,5 +1,12 @@
+<% 
+  asset_host   = Rails.application.config.action_controller.asset_host
+  asset_prefix = Rails.application.config.assets.prefix
+
+  assets_path = asset_host.blank? ? prefix : "#{ asset_host }#{ asset_prefix }"
+%>
+
 window.tinyMCEPreInit = window.tinyMCEPreInit || {
-  base:   '<%= Rails.application.config.assets.prefix %>/tinymce',
+  base:   '<%= assets_path %>/tinymce',
   query:  '<%= TinyMCE::VERSION %>',
   suffix: ''
 };
