@@ -2,7 +2,7 @@
   asset_host   = Rails.application.config.action_controller.asset_host
   asset_prefix = Rails.application.config.assets.prefix
 
-  assets_path = asset_host.blank? ? prefix : "#{ asset_host }#{ asset_prefix }"
+  assets_path = asset_host.blank? ? asset_prefix : "#{ asset_host }#{ asset_prefix }"
 %>
 
 window.tinyMCEPreInit = window.tinyMCEPreInit || {
